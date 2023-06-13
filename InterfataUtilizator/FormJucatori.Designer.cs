@@ -32,6 +32,8 @@
             this.btnJucatoriToStart = new System.Windows.Forms.Button();
             this.lblAddJucator = new System.Windows.Forms.Label();
             this.groupBoxEditJucator = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -67,8 +69,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridJucatori)).BeginInit();
             this.groupBoxEditJucator.SuspendLayout();
             this.SuspendLayout();
@@ -138,6 +138,27 @@
             this.groupBoxEditJucator.TabIndex = 13;
             this.groupBoxEditJucator.TabStop = false;
             this.groupBoxEditJucator.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(112, 343);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 29);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Sterge";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(38, 43);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(20, 16);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "ID";
+            this.label13.Visible = false;
             // 
             // label4
             // 
@@ -438,26 +459,6 @@
             this.label12.Size = new System.Drawing.Size(43, 16);
             this.label12.TabIndex = 39;
             this.label12.Text = "Nume";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(38, 43);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(25, 20);
-            this.label13.TabIndex = 39;
-            this.label13.Text = "ID";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(112, 343);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 29);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Sterge";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormJucatori
             // 

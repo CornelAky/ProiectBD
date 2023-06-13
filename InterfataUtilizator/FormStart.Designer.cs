@@ -35,8 +35,8 @@
             // 
             // btnStartEchipa
             // 
-            this.btnStartEchipa.Location = new System.Drawing.Point(385, 46);
-            this.btnStartEchipa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStartEchipa.Location = new System.Drawing.Point(3, 13);
+            this.btnStartEchipa.Margin = new System.Windows.Forms.Padding(4);
             this.btnStartEchipa.Name = "btnStartEchipa";
             this.btnStartEchipa.Size = new System.Drawing.Size(245, 69);
             this.btnStartEchipa.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // lblStartJucatori
             // 
-            this.lblStartJucatori.Location = new System.Drawing.Point(385, 138);
+            this.lblStartJucatori.Location = new System.Drawing.Point(3, 161);
             this.lblStartJucatori.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblStartJucatori.Name = "lblStartJucatori";
             this.lblStartJucatori.Size = new System.Drawing.Size(245, 69);
@@ -57,7 +57,7 @@
             // 
             // btnStartAntrenor
             // 
-            this.btnStartAntrenor.Location = new System.Drawing.Point(385, 242);
+            this.btnStartAntrenor.Location = new System.Drawing.Point(3, 88);
             this.btnStartAntrenor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStartAntrenor.Name = "btnStartAntrenor";
             this.btnStartAntrenor.Size = new System.Drawing.Size(245, 69);
@@ -70,11 +70,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(250, 234);
             this.Controls.Add(this.btnStartAntrenor);
             this.Controls.Add(this.lblStartJucatori);
             this.Controls.Add(this.btnStartEchipa);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormStart";
             this.Text = "FormStart";
             this.ResumeLayout(false);

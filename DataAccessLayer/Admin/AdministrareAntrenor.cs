@@ -14,7 +14,7 @@ namespace NivelAccesDate
         public List<Antrenor> GetAntrenor()
         {
             var result = new List<Antrenor>();
-            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from Coach_OracleAC", CommandType.Text);
+            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from AD_BD_Antrenor", CommandType.Text);
 
             foreach (DataRow linieBD in dsJucatori.Tables[PRIMUL_TABEL].Rows)
             {
@@ -29,7 +29,7 @@ namespace NivelAccesDate
         public List<Antrenor> GetAntrenorLiberi()
         {
             var result = new List<Antrenor>();
-            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from Coach_OracleAC where Id not in(select CoachID from Team_OracleAC)", CommandType.Text);
+            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from AD_BD_Antrenor where Id not in(select CoachID from AD_BD_Echipa)", CommandType.Text);
 
             foreach (DataRow linieBD in dsJucatori.Tables[PRIMUL_TABEL].Rows)
             {
@@ -46,7 +46,7 @@ namespace NivelAccesDate
         public Antrenor GetAntrenor(long id)
         {
             Antrenor result = null;
-            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from Coach_OracleAC where ID = :IdMeci", CommandType.Text,
+            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from AD_BD_Antrenor where ID = :IdMeci", CommandType.Text,
                 new OracleParameter(":IdMeci", OracleDbType.Int32, id, ParameterDirection.Input));
 
             if (dsJucatori.Tables[PRIMUL_TABEL].Rows.Count > 0)
@@ -70,7 +70,7 @@ namespace NivelAccesDate
         public bool AddAntrenor(Antrenor j)
         {
             return SqlDBHelper.ExecuteNonQuery(
-                "insert into Coach_OracleAC VALUES (Sec_AC.nextval, :Created_Date, :Name, :DATEOFBIRTH, :ContractStartDate, :ContractEndDate)", CommandType.Text,
+                "insert into AD_BD_Antrenor VALUES (Sec_AD_BD.nextval, :Created_Date, :Name, :DATEOFBIRTH, :ContractStartDate, :ContractEndDate)", CommandType.Text,
             new OracleParameter(":Created_Date", OracleDbType.Date, DateTime.Now, ParameterDirection.Input),
                 new OracleParameter(":Name", OracleDbType.NVarchar2, j.Name, ParameterDirection.Input),
                 new OracleParameter(":DATEOFBIRTH", OracleDbType.Date, j.DateOfBirth, ParameterDirection.Input),
@@ -82,7 +82,7 @@ namespace NivelAccesDate
         public bool UpdateAntrenor(Antrenor m)
         {
             return SqlDBHelper.ExecuteNonQuery(
-                "UPDATE Coach_OracleAC set Name=:Name, DATEOFBIRTH=:DATEOFBIRTH where ID=:ID", CommandType.Text,
+                "UPDATE AD_BD_Antrenor set Name=:Name, DATEOFBIRTH=:DATEOFBIRTH where ID=:ID", CommandType.Text,
                 new OracleParameter(":Name", OracleDbType.NVarchar2, m.Name, ParameterDirection.Input),
                 new OracleParameter(":DATEOFBIRTH", OracleDbType.Date, m.DateOfBirth, ParameterDirection.Input),
                 new OracleParameter(":ID", OracleDbType.Int32, m.ID, ParameterDirection.Input)

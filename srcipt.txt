@@ -1,0 +1,36 @@
+CREATE TABLE AD_BD_Antrenor(
+  ID INT PRIMARY KEY,
+  Created_Date DATE DEFAULT CURRENT_DATE,
+  Name VARCHAR(50),
+  DateOfBirth Timestamp,
+  ContractStartDate Timestamp,
+  ContractEndDate Timestamp
+);
+CREATE TABLE AD_BD_Echipa(
+  ID INT PRIMARY KEY,
+  Created_Date DATE DEFAULT CURRENT_DATE,
+  Team_Name VARCHAR(50),
+  CoachID INT,
+   FOREIGN KEY (CoachID) REFERENCES AD_BD_Antrenor(ID)
+);
+CREATE TABLE AD_BD_Jucator
+ (
+  ID INT PRIMARY KEY,
+  Created_Date DATE DEFAULT CURRENT_DATE,
+  Name VARCHAR(50),
+  DateOfBirth Timestamp,
+  PlayerTeamID INT,
+  Position VARCHAR(50),
+  ContractStartDate Timestamp,
+  ContractEndDate Timestamp,
+  Salary FLOAT,
+  FOREIGN KEY (PlayerTeamID) REFERENCES AD_BD_Echipa(ID)
+);
+CREATE SEQUENCE Sec_AD_BD
+  START WITH 1
+  INCREMENT BY 1
+  NOMAXVALUE
+  NOCYCLE
+  NOCACHE;
+
+

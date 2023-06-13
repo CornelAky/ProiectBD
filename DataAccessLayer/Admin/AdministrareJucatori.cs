@@ -14,7 +14,7 @@ namespace NivelAccesDate
         public List<Jucator> GetJucatori()
         {
             var result = new List<Jucator>();
-            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from Player_OracleAC", CommandType.Text);
+            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from AD_BD_Jucator", CommandType.Text);
 
             foreach (DataRow linieBD in dsJucatori.Tables[PRIMUL_TABEL].Rows)
             {
@@ -28,7 +28,7 @@ namespace NivelAccesDate
         public Jucator GetJucator(long id)
         {
             Jucator result = null;
-            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from Player_OracleAC  where ID= :ID", CommandType.Text,
+            var dsJucatori = SqlDBHelper.ExecuteDataSet("select * from AD_BD_Jucator  where ID= :ID", CommandType.Text,
                 new OracleParameter(":ID", OracleDbType.Int32, id, ParameterDirection.Input));
 
             if (dsJucatori.Tables[PRIMUL_TABEL].Rows.Count > 0)
@@ -44,7 +44,7 @@ namespace NivelAccesDate
         public bool AddJucator(Jucator j)
         {
             return SqlDBHelper.ExecuteNonQuery(
-                "insert into Player_OracleAC VALUES (Sec_AC.nextval, :Created_Date, :Name, :DateOfBirth, :PlayerTeamID, :Position,:ContractStartDate, :ContractEndDate,:Salary)", CommandType.Text,
+                "insert into AD_BD_Jucator VALUES (Sec_AD_BD.nextval, :Created_Date, :Name, :DateOfBirth, :PlayerTeamID, :Position,:ContractStartDate, :ContractEndDate,:Salary)", CommandType.Text,
             new OracleParameter(":Created_Date", OracleDbType.Date,DateTime.Now, ParameterDirection.Input),
                 new OracleParameter(":Name", OracleDbType.NVarchar2, j.Name, ParameterDirection.Input),
                 new OracleParameter(":DateOfBirth", OracleDbType.Date,j.DateOfBirth, ParameterDirection.Input),
@@ -59,7 +59,7 @@ namespace NivelAccesDate
         public bool UpdateJucator(Jucator j)
         {
             return SqlDBHelper.ExecuteNonQuery(
-                "UPDATE Player_OracleAC set Name=:Name, DateOfBirth=:DateOfBirth, PlayerTeamID=:PlayerTeamID, Position=:Position,ContractStartDate=:ContractStartDate, ContractEndDate=:ContractEndDate,Salary=:Salary where ID = :ID", CommandType.Text,
+                "UPDATE AD_BD_Jucator set Name=:Name, DateOfBirth=:DateOfBirth, PlayerTeamID=:PlayerTeamID, Position=:Position,ContractStartDate=:ContractStartDate, ContractEndDate=:ContractEndDate,Salary=:Salary where ID = :ID", CommandType.Text,
                 new OracleParameter(":Name", OracleDbType.NVarchar2, j.Name, ParameterDirection.Input),
                 new OracleParameter(":DateOfBirth", OracleDbType.Date, j.DateOfBirth, ParameterDirection.Input),
                 new OracleParameter(":PlayerTeamID", OracleDbType.Int32, j.TeamID, ParameterDirection.Input),
@@ -73,7 +73,7 @@ namespace NivelAccesDate
         public bool DeleteJucator(long id)
         {
             return SqlDBHelper.ExecuteNonQuery(
-                "Delete from  Player_OracleAC where ID = :ID", CommandType.Text,
+                "Delete from  AD_BD_Jucator where ID = :ID", CommandType.Text,
                  new OracleParameter(":ID", OracleDbType.Int32, id ,ParameterDirection.Input)
             );
         }
